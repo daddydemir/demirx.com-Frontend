@@ -1,0 +1,10 @@
+<h3>All Notes</h3>
+
+<ul class="list-group">
+    <li class="list-group-item " *ngFor="let note of allNotes">
+      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+      {{note.title}}
+       |  
+      {{note.status}}
+    </li>
+  </ul>
