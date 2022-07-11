@@ -1,10 +1,35 @@
-<h3>All Notes</h3>
-
-<ul class="list-group">
-    <li class="list-group-item " *ngFor="let note of allNotes">
-      <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-      {{note.title}}
-       |  
-      {{note.status}}
-    </li>
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3 style="text-align: center;">All Notes</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-warning">
+              <i class="bi bi-folder-plus"></i> Add Note
+            </button>
+          </div>
+        </li>
+        <li (click)="isClicked(note)" [class]="getCurrentNoteClass(note) " *ngFor="let note of allNotes">
+          <div class="row">
+            <div class="col-md-6">
+              <h5> {{note.title}}</h5>
+            </div>
+            <div class="col-md-6">
+              <button style="float:right;" type="button" class="btn btn-danger">Tamamla</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h3 style="text-align: center;"> User info</h3>
+      <div class="card" style="width: 18rem;">
+        <img src="https://avatars.githubusercontent.com/u/42716195?v=4" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">User detail</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
